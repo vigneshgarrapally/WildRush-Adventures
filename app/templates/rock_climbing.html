@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Climbing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/hiking.css') }}"
+    />
+  </head>
+  <body style="padding: 20px; background-color: aliceblue">
+    {% extends "base.html" %} {% block content %}
+    <div class="card-wrapper">
+      <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+          <div class="img-display">
+            <div class="img-showcase">
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/rock-climbing.jpg')}}"
+                alt="Rock Climbing Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/rock-climbing1.png')}}"
+                alt="Rock Climbing Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/rock-climbing2.png')}}"
+                alt="Rock Climbing Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/rock-climbing3.png')}}"
+                alt="Rock Climbing Image"
+              />
+            </div>
+          </div>
+          <div class="img-select">
+            <div class="img-item">
+              <a href="#" data-id="1">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/rock-climbing.jpg')}}"
+                  alt="Rock Climbing Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="2">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/rock-climbing1.png')}}"
+                  alt="Rock Climbing Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="3">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/rock-climbing2.png')}}"
+                  alt="Rock Climbing Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="4">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/rock-climbing3.png')}}"
+                  alt="Rock Climbing Image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+          <h2 class="product-title">Rock Climbing</h2>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.3(27)</span>
+          </div>
+
+          <div class="product-price">
+            <p class="new-price">Price Per Person <span> $100 </span></p>
+          </div>
+
+          <div class="product-detail">
+            <h2>about this adventure</h2>
+            <p>
+              Rock climbing enthusiasts will find their passion come alive with
+              WildRush Adventures' rock climbing experiences. Explore the
+              vertical world of natural rock formations or state-of-the-art
+              climbing walls, where every ascent is a puzzle to be solved. Our
+              certified climbing instructors offer guidance to climbers of all
+              abilities, ensuring a safe and exhilarating journey to the top.
+              Whether you're seeking to improve your climbing skills or simply
+              enjoy the thrill of scaling heights, rock climbing promises a
+              rewarding challenge that encourages teamwork, problem-solving, and
+              personal growth. Discover the joy of defying gravity and revel in
+              the sense of achievement as you reach the summit.
+            </p>
+          </div>
+
+          <div class="purchase-info">
+            <a href="{{ url_for('requestquote') }}" class="btn">Get a Quote</a>
+            <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const imgs = document.querySelectorAll(".img-select a");
+      const imgBtns = [...imgs];
+      let imgId = 1;
+
+      imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+          event.preventDefault();
+          imgId = imgItem.dataset.id;
+          slideImage();
+        });
+      });
+
+      function slideImage() {
+        const displayWidth = document.querySelector(
+          ".img-showcase img:first-child"
+        ).clientWidth;
+
+        document.querySelector(".img-showcase").style.transform = `translateX(${
+          -(imgId - 1) * displayWidth
+        }px)`;
+      }
+
+      window.addEventListener("resize", slideImage);
+    </script>
+    {% endblock %}
+  </body>
+</html>

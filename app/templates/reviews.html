@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/reviews.css')}}"
+    />
+  </head>
+  <body style="background-color: aliceblue">
+    {% extends "base.html" %} {% block content %}
+    <div class="reviews">
+      <div class="reviews-title">
+        <p>Reviews</p>
+      </div>
+      <div>
+        <div class="reviews-row row-first">
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/adil.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>“An unforgettable experience!”</p>
+              </div>
+              <div class="card-para">
+                <p>
+                  The wildlife adventures with your team were simply incredible.
+                  From spotting majestic animals in their natural habitat to
+                  exploring untouched wilderness, it was a dream come true for
+                  every nature enthusiast. Excellent team with a creative
+                  mindset – their passion for wildlife truly shines through!
+                </p>
+              </div>
+
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Adil</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/kalyan.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>“Wildlife Adventures Company exceeded all expectations! ”</p>
+              </div>
+              <div class="card-para">
+                <p>
+                  The knowledgeable guides made our safari expedition a truly
+                  educational and thrilling journey. Their attention to detail
+                  and commitment to conservation made the experience even more
+                  meaningful. Can't wait to join them again for more wilderness
+                  adventures!
+                </p>
+              </div>
+
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Kalyan Reddy Kunduru</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/sudheer.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>
+                  “A fantastic wildlife adventure awaits with this company!”
+                </p>
+              </div>
+              <div class="card-para">
+                <p>
+                  The team's expertise and love for nature are evident in every
+                  step of the journey. The encounters with wildlife were
+                  awe-inspiring, and the entire trip was flawlessly organized.
+                  Highly recommend to anyone seeking an authentic and immersive
+                  wildlife experience.
+                </p>
+              </div>
+
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Sudheer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-row row-second">
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/prakash.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>“Wildlife Adventures took us on a wild ride!”</p>
+              </div>
+              <div class="card-para">
+                <p>
+                  From river rafting amidst stunning landscapes to encountering
+                  rare species on captivating safaris, every moment was filled
+                  with excitement. Their passion and dedication made us feel
+                  safe and well-cared-for throughout the trip. Kudos to the
+                  excellent team!
+                </p>
+              </div>
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Prakash</p>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/jithendar.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>“An Enchanting Encounter with Wildlife and Nature!”</p>
+              </div>
+              <div class="card-para">
+                <p>
+                  I can't thank Wildlife Adventures enough for the magical
+                  experience they provided. The team's deep understanding of the
+                  ecosystem and its inhabitants added immense value to the trip.
+                  Their commitment to eco-friendly practices was heartening to
+                  witness. It's clear they genuinely care about the environment
+                  and the animals they share it with.
+                </p>
+              </div>
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Jithendar Reddy</p>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-card">
+            <img
+              class="card-img"
+              src="{{ url_for('static', filename='assets/images/reviews/naveen.jpg') }}"
+              alt=""
+            />
+
+            <div class="card-text">
+              <div class="card-title">
+                <p>“An adventure of a lifetime!”</p>
+              </div>
+              <div class="card-para">
+                <p>
+                  Wildlife Adventures Company delivered on their promise of
+                  creating unforgettable memories. The guides' knowledge,
+                  enthusiasm, and friendliness made the journey both educational
+                  and enjoyable. I left with a newfound appreciation for nature
+                  and wildlife. Truly an excellent team with a creative mindset!
+                </p>
+              </div>
+              <div class="card-author">
+                <svg
+                  width="9"
+                  height="2"
+                  viewBox="0 0 9 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.526123 1.13867H8.25949"
+                    stroke="black"
+                    stroke-width="0.822209"
+                  />
+                </svg>
+                <p>Naveen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

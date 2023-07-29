@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountaineering</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/hiking.css') }}"
+    />
+  </head>
+  <body style="padding: 20px; background-color: aliceblue">
+    {% extends "base.html" %} {% block content %}
+    <div class="card-wrapper">
+      <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+          <div class="img-display">
+            <div class="img-showcase">
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/iceclimbing.jpg')}}"
+                alt="Mountaineering Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/iceclimbing1.jpg')}}"
+                alt="Mountaineering Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/iceclimbing2.jpg')}}"
+                alt="Mountaineering Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/iceclimbing3.png')}}"
+                alt="Mountaineering Image"
+              />
+            </div>
+          </div>
+          <div class="img-select">
+            <div class="img-item">
+              <a href="#" data-id="1">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/iceclimbing.jpg')}}"
+                  alt="Mountaineering Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="2">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/iceclimbing1.jpg')}}"
+                  alt="Mountaineering Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="3">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/iceclimbing2.jpg')}}"
+                  alt="Mountaineering Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="4">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/iceclimbing3.png')}}"
+                  alt="Mountaineering Image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+          <h2 class="product-title">Mountaineering</h2>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.3(27)</span>
+          </div>
+
+          <div class="product-price">
+            <p class="new-price">Price Per Person <span> $150 </span></p>
+          </div>
+
+          <div class="product-detail">
+            <h2>about this adventure</h2>
+            <p>
+              Mountaineering with WildRush Adventures is a test of determination
+              and a celebration of human spirit. Conquer majestic peaks,
+              challenge yourself to overcome rugged terrains, and experience the
+              satisfaction of reaching awe-inspiring summits. Our mountaineering
+              expeditions cater to both novice climbers and seasoned alpinists,
+              providing expert guidance, top-notch equipment, and carefully
+              planned routes. As you ascend to new heights, you'll be rewarded
+              with breathtaking vistas and a sense of accomplishment like no
+              other. Whether it's scaling iconic peaks or exploring lesser-known
+              summits, mountaineering allows you to embrace the beauty of
+              untouched wilderness and discover your inner strength.
+            </p>
+          </div>
+
+          <div class="purchase-info">
+            <a href="{{ url_for('requestquote') }}" class="btn">Get a Quote</a>
+            <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const imgs = document.querySelectorAll(".img-select a");
+      const imgBtns = [...imgs];
+      let imgId = 1;
+
+      imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+          event.preventDefault();
+          imgId = imgItem.dataset.id;
+          slideImage();
+        });
+      });
+
+      function slideImage() {
+        const displayWidth = document.querySelector(
+          ".img-showcase img:first-child"
+        ).clientWidth;
+
+        document.querySelector(".img-showcase").style.transform = `translateX(${
+          -(imgId - 1) * displayWidth
+        }px)`;
+      }
+
+      window.addEventListener("resize", slideImage);
+    </script>
+    {% endblock %}
+  </body>
+</html>

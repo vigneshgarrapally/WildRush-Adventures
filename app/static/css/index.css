@@ -1,0 +1,12 @@
+.ui.message {
+  background-color: rga(238, 238, 238);
+  box-shadow: none;
+  padding: 5em 4em;
+}
+
+.ui.message p.lead {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zip Lining</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/hiking.css') }}"
+    />
+  </head>
+  <body style="padding: 20px; background-color: aliceblue">
+    {% extends "base.html" %} {% block content %}
+    <div class="card-wrapper">
+      <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+          <div class="img-display">
+            <div class="img-showcase">
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/ziplining.jpg')}}"
+                alt="Zip Lining Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/ziplining1.png')}}"
+                alt="Zip Lining Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/ziplining2.png')}}"
+                alt="Zip Lining Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/ziplining3.png')}}"
+                alt="Zip Lining Image"
+              />
+            </div>
+          </div>
+          <div class="img-select">
+            <div class="img-item">
+              <a href="#" data-id="1">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/ziplining.jpg')}}"
+                  alt="Zip Lining Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="2">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/ziplining1.png')}}"
+                  alt="Zip Lining Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="3">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/ziplining2.png')}}"
+                  alt="Zip Lining Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="4">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/ziplining3.png')}}"
+                  alt="Zip Lining Image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+          <h2 class="product-title">Zip Lining</h2>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.3(27)</span>
+          </div>
+
+          <div class="product-price">
+            <p class="new-price">Price Per Person <span> $100 </span></p>
+          </div>
+
+          <div class="product-detail">
+            <h2>about this adventure</h2>
+            <p>
+              Zip-lining with WildRush Adventures is a high-flying escapade that
+              lets you experience the world from a bird's-eye view. Glide
+              through the air on secure cables, spanning lush canopies and
+              awe-inspiring landscapes. Our zip-lining courses are designed to
+              blend adventure with an appreciation for nature, as you soar from
+              one platform to another, gaining a unique perspective of the
+              surroundings. Whether it's a family-friendly zip-lining tour or an
+              adrenaline-charged zip-line canopy tour, our experienced guides
+              ensure your safety and enjoyment throughout the journey.
+              Zip-lining promises a thrilling adventure that combines
+              exhilaration with an eco-friendly way to explore the great
+              outdoors.
+            </p>
+          </div>
+
+          <div class="purchase-info">
+            <a href="{{ url_for('requestquote') }}" class="btn">Get a Quote</a>
+            <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const imgs = document.querySelectorAll(".img-select a");
+      const imgBtns = [...imgs];
+      let imgId = 1;
+
+      imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+          event.preventDefault();
+          imgId = imgItem.dataset.id;
+          slideImage();
+        });
+      });
+
+      function slideImage() {
+        const displayWidth = document.querySelector(
+          ".img-showcase img:first-child"
+        ).clientWidth;
+
+        document.querySelector(".img-showcase").style.transform = `translateX(${
+          -(imgId - 1) * displayWidth
+        }px)`;
+      }
+
+      window.addEventListener("resize", slideImage);
+    </script>
+    {% endblock %}
+  </body>
+</html>

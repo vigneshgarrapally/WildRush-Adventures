@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/contact.css')}}"
+    />
+  </head>
+  <body style="background-color: aliceblue">
+    {% extends 'base.html' %} {% block content %} {% if success %}
+    <div class="ui centered page grid">
+      <div class="column eight wide">
+        <div class="ui success message" id="success-message">
+          <p>Details have been submitted successfully!</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="container">
+      <section class="contact_us">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div class="contact_inner">
+                <div class="row">
+                  <div class="col-md-10">
+                    <div class="contact_form_inner">
+                      <div class="contact_field">
+                        <h3>Contact Us</h3>
+                        <p>
+                          Looking for corporate Packages or have any questions?
+                          Fill out the form below to get in touch with us.
+                        </p>
+                        <form method="post" action="{{url_for('contact')}}">
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="form-control form-group"
+                            placeholder="Name"
+                            required
+                          />
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{current_user.email}}"
+                            class="form-control form-group"
+                            placeholder="Email"
+                            required
+                          />
+                          <textarea
+                            type="text"
+                            class="form-control form-group"
+                            placeholder="Message"
+                            id="message"
+                            name="message"
+                            required
+                          ></textarea>
+                          <p class="full-width">
+                            <input
+                              type="checkbox"
+                              id="checkbox"
+                              name="checkbox"
+                              checked
+                              required
+                            />
+                            Yes, I would like to receive communications by call
+                            / email about Company's services.
+                          </p>
+                          <button class="contact_form_submit" type="submit">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div
+                      class="right_conatct_social_icon d-flex align-items-end"
+                    >
+                      <div class="socil_item_inner d-flex">
+                        <li>
+                          <a href="https://facebook.com"
+                            ><i class="fab fa-facebook-square"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://instagram.com"
+                            ><i class="fab fa-instagram"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com"
+                            ><i class="fab fa-twitter"></i
+                          ></a>
+                        </li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact_info_sec">
+                  <h4>Contact Info</h4>
+                  <div class="d-flex info_single align-items-center">
+                    <i class="fas fa-headset"></i>
+                    <span>+1 8009 054294</span>
+                  </div>
+                  <div class="d-flex info_single align-items-center">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <span>info@wildrushadventures.com</span>
+                  </div>
+                  <div class="d-flex info_single align-items-center">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>House Number, Area Name, City, State, Country</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="map_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="map_inner">
+              <h4>Find Us on Google Map</h4>
+              <p>
+                Visit us at our location to experience our exceptional service
+                and hospitality. Our friendly staff is always ready to assist
+                you with any questions or concerns you may have. We look forward
+                to seeing you soon!
+              </p>
+
+              <div class="map_bind">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.9748176556595!2d-86.81051310321044!3d33.50203229999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88891be961b81a47%3A0x51c659f9085bb04b!2sUniversity%20of%20Alabama%20at%20Birmingham!5e0!3m2!1sen!2sin!4v1690456111644!5m2!1sen!2sin"
+                  width="100%"
+                  height="450"
+                  frameborder="0"
+                  style="border: 0"
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="text-align: center; margin-top: 20px">
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | WildRush Adventures
+      </p>
+    </div>
+    <script>
+      // get the message element
+      var message = document.getElementById("success-message");
+      console.log(message);
+      console.log(message.style.display);
+      // set a timer to hide the message after 5 seconds
+      setTimeout(function () {
+        message.style.display = "none";
+      }, 3000);
+      console.log(message.style.display);
+    </script>
+    {% endblock %}
+  </body>
+</html>

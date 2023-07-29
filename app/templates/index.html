@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WildRush Adventures</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+    <style>
+      #grad1 {
+        height: 200px;
+        background-image: url("{{ url_for('static', filename='assets/images/background.jpg') }}");
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body id="grad1">
+    {% extends "base.html" %} {% block content %}
+
+    <div class="ui container">
+      <div class="ui large header center aligned">
+        Welcome to WildRush Adventures!
+      </div>
+      <div class="ui message">
+        <br />
+        <h2 class="ui header">About Us:</h2>
+        <br />
+        <p class="lead">
+          At WildRush Adventures, we believe life is meant to be lived to the
+          fullest, embracing the untamed spirit of the wild and seeking
+          exhilarating moments that leave a lasting impact. We are not just an
+          adventure sports company; we are a gateway to an extraordinary world
+          of adrenaline-fueled experiences.
+        </p>
+        <p class="lead">
+          Embrace the rush as you dive into a world of heart-pounding activities
+          that push your limits and awaken your sense of adventure. From soaring
+          through the sky on a zipline, scaling majestic cliffs, and conquering
+          raging rapids to exploring hidden trails on a mountain bike or
+          embarking on awe-inspiring treks to uncharted territories – we've got
+          it all!
+        </p>
+        <p class="lead">
+          Our team of passionate and experienced guides ensures your safety
+          while creating memories that will stay etched in your heart forever.
+          Whether you're an adrenaline junkie seeking the next big thrill or a
+          nature lover eager to explore the beauty of the great outdoors,
+          WildRush Adventures has the perfect escapade for you.
+        </p>
+        <p class="lead">
+          Join us on an unforgettable journey as we take you off the beaten
+          path, away from the ordinary, and into the realm of wild adventure.
+          Come, let's write a story of adrenaline, courage, and camaraderie
+          together – a story that starts with WildRush Adventures. Are you ready
+          to embark on the ultimate adventure of a lifetime? Let's make it
+          happen!
+        </p>
+        <br />
+        <h2 class="ui header">Our Objectives:</h2>
+        <br />
+        <p class="lead">
+          <b>Unparalled Adventure:</b> We are committed to curating a diverse
+          array of adrenaline-pumping activities, from heart-stopping bungee
+          jumps to adrenaline-fueled white-water rafting, ensuring that every
+          adventure enthusiast finds their perfect rush.
+        </p>
+        <p class="lead">
+          Safety First: While we thrive on pushing the limits, your safety is
+          our utmost priority. Our experienced and certified guides meticulously
+          plan each expedition, ensuring the highest safety standards, so you
+          can immerse yourself in the thrill without any worries.
+        </p>
+        <p class="lead">
+          Environmental Stewardship: We have a deep reverence for the natural
+          world and the environments that host our adventures. We pledge to
+          operate sustainably, leaving no trace behind, and actively
+          participating in conservation efforts to preserve the wilderness for
+          generations to come.
+        </p>
+        <p class="lead">
+          Memorable Experiences: We don't just offer adventures; we craft
+          unforgettable memories. Our team goes the extra mile to ensure that
+          every moment with WildRush Adventures is filled with laughter,
+          camaraderie, and a sense of accomplishment.
+        </p>
+        <br />
+        <h2 class="ui header">Founding Team:</h2>
+        <br />
+        <div class="ui five stackable cards">
+          <div class="card">
+            <div class="content">
+              <img
+                class="right floated rounded ui image"
+                src="{{ url_for('static', filename='assets/images/founders/madhav.jpg') }}"
+              />
+              <div class="header">Chelpuri Sai Madhav</div>
+              <div class="meta">Mountaineer</div>
+              <div class="description">
+                Sai Madhav is an experienced mountaineer with a passion for
+                exploring the world's highest peaks. His love for adventure and
+                nature led him to co-found WildRush Adventures to share his
+                enthusiasm with others.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <img
+                class="right floated rounded ui image"
+                src="{{ url_for('static', filename='assets/images/founders/siddarth.jpg') }}"
+              />
+              <div class="header">Kodimela Siddarth Sharma</div>
+              <div class="meta">Surfer</div>
+              <div class="description">
+                Siddarth Sharma is a professional surfer and ocean enthusiast.
+                He is dedicated to promoting sustainable adventure tourism and
+                empowering individuals to embrace the thrill of the waves.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <img
+                class="right floated rounded ui image"
+                src="{{ url_for('static', filename='assets/images/founders/prudhvi.jpg') }}"
+              />
+              <div class="header">Prudhvi Raju Gadiraju</div>
+              <div class="meta">Climber</div>
+              <div class="description">
+                Prudhvi is a passionate climber and a certified climbing
+                instructor. He is committed to sharing his love for the sport
+                and helping others discover the joy of scaling new heights.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <img
+                class="right floated rounded ui image"
+                src="{{ url_for('static', filename='assets/images/founders/mahith.jpg') }}"
+              />
+              <div class="header">Mahith Anunath Reddy</div>
+              <div class="meta">Rafting Guide</div>
+              <div class="description">
+                Mahith Anunath Reddy is a certified rafting guide and a
+                passionate conservationist. He is dedicated to protecting the
+                environment and promoting sustainable tourism.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <img
+                class="right floated rounded ui image"
+                src="{{ url_for('static', filename='assets/images/founders/goutham.jpg') }}"
+              />
+              <div class="header">Goutham Reddy potlacheruvu</div>
+              <div class="meta">Bungee Jumper</div>
+              <div class="description">
+                Rahul Singh is a professional bungee jumper and a certified
+                instructor. He is committed to sharing his love for the sport
+                and helping others discover the joy of scaling new heights.
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <h2 class="ui header">Why Choose WildRush Adventures:</h2>
+        <br />
+        <p class="lead">
+          Whether you're a seasoned thrill-seeker or stepping into the world of
+          adventure sports for the first time, WildRush Adventures is here to be
+          your partner in every step of the journey. Let us guide you through
+          breathtaking landscapes, unforgettable challenges, and memories that
+          will linger long after the adrenaline subsides. Join us, and together,
+          we'll embrace the wild rush of life!
+        </p>
+        <p class="lead">
+          Variety of Experiences: Whether you seek the adrenaline rush of
+          extreme sports or the serenity of a hiking trail, our diverse range of
+          adventures caters to all interests and fitness levels.
+        </p>
+        <p class="lead">
+          Unmatched Expertise: Our guides are handpicked for their extensive
+          experience and local knowledge, guaranteeing you a safe and enriching
+          expedition.
+        </p>
+        <p class="lead">
+          Personalized Service: At WildRush Adventures, we take pride in
+          crafting personalized experiences that cater to your preferences,
+          ensuring your adventure aligns perfectly with your dreams.
+        </p>
+        <p class="lead">
+          Responsible Adventure: We are committed to sustainable and responsible
+          tourism, minimizing our environmental impact and supporting local
+          communities.
+        </p>
+        <p class="lead">
+          Creating Lifelong Bonds: Joining a WildRush adventure is not just
+          about the activity; it's about forming lasting connections with fellow
+          adventurers who share your passion for exploration.
+        </p>
+        <br />
+        <h2 class="ui header">Embark on Your Next Wild Adventure:</h2>
+        <br />
+        <p class="lead">
+          Whether you're a seasoned thrill-seeker or stepping into the world of
+          adventure sports for the first time, WildRush Adventures is here to be
+          your partner in every step of the journey. Let us guide you through
+          breathtaking landscapes, unforgettable challenges, and memories that
+          will linger long after the adrenaline subsides. Join us, and together,
+          we'll embrace the wild rush of life!
+        </p>
+        <div class="ui container center aligned">
+          <a class="ui big red button" href="{{ url_for('adventures') }}"
+            >Explore Adventures &raquo;
+          </a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div style="text-align: center; margin-top: 20px">
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | WildRush Adventures
+      </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    {% endblock %}
+  </body>
+</html>

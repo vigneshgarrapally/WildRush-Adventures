@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiking</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/hiking.css') }}"
+    />
+  </head>
+  <body style="padding: 20px; background-color: aliceblue">
+    {% extends "base.html" %} {% block content %}
+    <div class="card-wrapper">
+      <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+          <div class="img-display">
+            <div class="img-showcase">
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/hiking.webp')}}"
+                alt="Hiking Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/hiking1.jpg')}}"
+                alt="Hiking Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/hiking2.webp')}}"
+                alt="Hiking Image"
+              />
+              <img
+                src="{{url_for('static', filename='assets/images/adventures/hiking3.jpeg')}}"
+                alt="Hiking Image"
+              />
+            </div>
+          </div>
+          <div class="img-select">
+            <div class="img-item">
+              <a href="#" data-id="1">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/hiking.webp')}}"
+                  alt="Hiking Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="2">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/hiking1.webp')}}"
+                  alt="Hiking Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="3">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/hiking2.webp')}}"
+                  alt="Hiking Image"
+                />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="4">
+                <img
+                  src="{{url_for('static', filename='assets/images/adventures/hiking3.webp')}}"
+                  alt="Hiking Image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+          <h2 class="product-title">Hiking</h2>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.7(21)</span>
+          </div>
+
+          <div class="product-price">
+            <p class="new-price">Price Per Person <span> $50 </span></p>
+          </div>
+
+          <div class="product-detail">
+            <h2>about this adventure</h2>
+            <p>
+              Hiking with WildRush Adventures offers a truly immersive
+              experience, where nature's wonders become your playground. Whether
+              you're a seasoned trekker or a first-time hiker, our carefully
+              curated hiking trails cater to all skill levels. Traverse lush
+              forests, discover hidden waterfalls, and breathe in the fresh
+              mountain air as you explore the most scenic landscapes. Our expert
+              guides lead you through diverse terrains, ensuring safety and
+              providing fascinating insights into the local flora and fauna. Get
+              ready to challenge yourself, forge new connections with fellow
+              hikers, and create cherished memories that will stay with you long
+              after the journey ends.
+            </p>
+          </div>
+
+          <div class="purchase-info">
+            <a href="{{ url_for('requestquote') }}" class="btn">Get a Quote</a>
+            <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const imgs = document.querySelectorAll(".img-select a");
+      const imgBtns = [...imgs];
+      let imgId = 1;
+
+      imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener("click", (event) => {
+          event.preventDefault();
+          imgId = imgItem.dataset.id;
+          slideImage();
+        });
+      });
+
+      function slideImage() {
+        const displayWidth = document.querySelector(
+          ".img-showcase img:first-child"
+        ).clientWidth;
+
+        document.querySelector(".img-showcase").style.transform = `translateX(${
+          -(imgId - 1) * displayWidth
+        }px)`;
+      }
+
+      window.addEventListener("resize", slideImage);
+    </script>
+    {% endblock %}
+  </body>
+</html>

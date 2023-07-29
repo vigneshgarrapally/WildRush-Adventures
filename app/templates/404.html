@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Not Found</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #212529;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    {% extends "base.html" %} {% block content %}
+    <div class="container">
+      <h1>404</h1>
+      <p>Page not found</p>
+      <!-- <a href="/">Go back to homepage</a> -->
+    </div>
+    {% endblock %}
+  </body>
+</html>
